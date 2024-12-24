@@ -305,6 +305,7 @@ const styles = {
     "sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider",
 };
 
-const baseUrl = "https://portfolio-site-lxne.onrender.com/"; // production
+// production: https://portfolio-site-lxne.onrender.com/
+const baseUrl = "https://portfolio-site-lxne.onrender.com/"; /*"http://localhost:5000/" // testing*/ 
   
 export { services, technologies, experiences, testimonials, projects, styles, baseUrl };

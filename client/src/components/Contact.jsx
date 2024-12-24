@@ -1,11 +1,12 @@
-import { useState, useRef } from "react";
+import { useState, useRef, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../constants";
 import { sendEmail, downloadPdf } from "../utils";
-import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+
+const EarthCanvas = lazy(() => import("./canvas/Earth"));
 
 const Contact = () => {
   const subject_to = "Thanks for checking out my portfolio!";
@@ -151,10 +152,16 @@ const Contact = () => {
         viewport={{ once: true }}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
-        <EarthCanvas />
+        <Suspense fallback={
+          <div className="flex-1 w-full h-full flex items-center justify-center">
+            <p className="text-white">Loading 3D Model...</p>
+          </div>
+        }>
+          <EarthCanvas />
+        </Suspense>
       </motion.div>
     </div>
-  )
+  );
 }
 
 export default SectionWrapper(Contact, "contact");

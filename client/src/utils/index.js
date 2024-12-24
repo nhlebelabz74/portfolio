@@ -24,7 +24,7 @@ export const downloadPdf = () => {
 
 export const sendEmail = async ({ sender_name, sender_email, subject, message, type }) => {
     try {
-        const response = await api.post('/send-email', {
+        const response = await api.post('/api/send-email', {
             sender_name: sender_name,
             sender_email: sender_email,
             subject: subject,
