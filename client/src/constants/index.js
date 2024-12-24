@@ -65,6 +65,18 @@ export const navLinks = [
   
   const technologies = [
     {
+      name: "Java",
+      icon: java,
+    },
+    {
+      name: "Android Studio",
+      icon: android,
+    },
+    {
+      name: "SQL 5",
+      icon: sql,
+    },
+    {
       name: "HTML 5",
       icon: html,
     },
@@ -77,22 +89,6 @@ export const navLinks = [
       icon: javascript,
     },
     {
-      name: "Java",
-      icon: java,
-    },
-    {
-      name: "React JS",
-      icon: reactjs,
-    },
-    {
-      name: "SQL 5",
-      icon: sql,
-    },
-    {
-      name: "Tailwind CSS",
-      icon: tailwind,
-    },
-    {
       name: "Node JS",
       icon: nodejs,
     },
@@ -101,16 +97,20 @@ export const navLinks = [
       icon: mongodb,
     },
     {
+      name: "React JS",
+      icon: reactjs,
+    },
+    {
+      name: "Tailwind CSS",
+      icon: tailwind,
+    },
+    {
       name: "C++",
       icon: cpp,
     },
     {
       name: "git",
       icon: git,
-    },
-    {
-      name: "Android Studio",
-      icon: android,
     },
     {
       name: "Power Apps",

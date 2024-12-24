@@ -8,11 +8,11 @@ const Ball = (props) => {
 
   return (
     <Float
-      speed={1.75}
-      rotationIntensity={1}
-      floatIntensity={2}
+      speed={1.5}
+      rotationIntensity={0.6}
+      floatIntensity={1.5}
     >
-      <ambientLight intensity={1.5} />
+      <ambientLight intensity={1} />
       <directionalLight position={[0, 0, 0.05]} />
       <mesh castShadow receiveShadow scale={2.75}>
         <icosahedronGeometry args={[1, 1]} />
@@ -30,23 +30,22 @@ const Ball = (props) => {
         />
       </mesh>
     </Float>
-  )
-}
+  );
+};
 
 const BallCanvas = ({ icon }) => {
   return (
     <Canvas
-      frameloop="demand"
+      frameloop="always"
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<Loader />}>
-        <OrbitControls enableZoom={false} />
+        <OrbitControls enableZoom={false} enablePan={false} />
         <Ball imgUrl={icon} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   );
-}
+};
 
 export default BallCanvas;

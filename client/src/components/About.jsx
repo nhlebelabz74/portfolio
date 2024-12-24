@@ -71,7 +71,7 @@ const About = () => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        My name is Banzile Nhlebela (AKA{' '}
+        My name is Banzile Nhlebela (aka{' '}
         <span style={textStyle}>T</span>he{' '}
         <span style={textStyle}>M</span>ad{' '}
         <span style={textStyle}>K</span>ing
