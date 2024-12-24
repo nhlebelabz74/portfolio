@@ -32,7 +32,10 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+import pdf from "./pdf/Cauchy Integral Formula.pdf";
+
 export {
+  pdf,
   crown,
   logo,
   csam,

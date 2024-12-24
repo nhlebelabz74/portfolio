@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { saveAs } from 'file-saver';
+import { pdf } from '../assets';
 import { baseUrl } from '../constants';
 
 const api = axios.create({
@@ -10,9 +11,7 @@ const api = axios.create({
 });
 
 export const downloadPdf = () => {
-    const pdfPath = '/assets/pdf/Cauchy Integral Formula.pdf';
-
-    axios.get(pdfPath, { responseType: 'blob' })
+    axios.get(pdf, { responseType: 'blob' })
         .then(response => { 
             const blob = new Blob([response.data], { type: 'application/pdf' }); 
             saveAs(blob, 'Cauchy Integral Formula.pdf');
