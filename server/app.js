@@ -4,6 +4,7 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 const compression = require('compression');
 const path = require('path');
+const axios = require('axios');
 require('dotenv').config();
 
 const app = express();
@@ -21,9 +22,26 @@ app.use('/api/model', express.static('./models', {
   }
 }));
 
-app.post('/api/send-email', (req, res) => {
+app.post('/api/send-email', async (req, res) => {
   const { sender_name, sender_email, subject, message, type } = req.body;
   const my_email = process.env.EMAIL_ADDRESS;
+
+  try {
+    const validationResponse = await axios.get('https://apilayer.net/api/check', {
+      params: {
+        access_key: process.env.MAILBOXLAYER_API_KEY,
+        email: sender_email,
+      },
+    });
+
+    const { format_valid, smtp_check } = validationResponse.data;
+
+    if (!format_valid || !smtp_check)
+      return res.status(400).send('Invalid email address provided.');
+  } catch (error) {
+    console.error('Error validating email:', error);
+    return res.status(500).send('Error validating email address.');
+  }
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
