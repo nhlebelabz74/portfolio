@@ -125,18 +125,18 @@ const Contact = () => {
             />
           </label>
 
-          <div className="flex flex-row gap-5 items-center">
+          <div className="flex flex-row gap-5 items-center justify-start">
             <button
               type="submit"
               disabled={loading}
-              className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary hover:rounded-2xl hover:text-light-purple disabled:opacity-50"
+              className="bg-tertiary py-3 px-8 outline-none text-white font-bold shadow-md shadow-primary hover:rounded-2xl hover:text-light-purple disabled:opacity-50"
             >
               {loading ? "Sending..." : "Send Message"}
             </button>
 
             <button
               type="button"
-              className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary hover:rounded-2xl hover:text-light-purple"
+              className="bg-tertiary py-3 px-8 outline-none text-white font-bold shadow-md shadow-primary hover:rounded-2xl hover:text-light-purple"
               onClick={() => downloadPdf()}
             >
               Download My CV

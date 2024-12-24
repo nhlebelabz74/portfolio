@@ -22,7 +22,7 @@ const Hero = () => {
       </div>
 
       <Suspense fallback={
-        <div className="flex-1 w-full h-full flex items-center justify-center">
+        <div className="flex-1 w-full h-full flex items-center justify-center mt-10">
           <p className="text-white">Loading 3D Model...</p>
         </div>
       }>
