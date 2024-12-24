@@ -15,7 +15,7 @@ export const downloadPdf = () => {
         .then(response => { 
             const blob = new Blob([response.data], { type: 'application/pdf' });
             alert('It may take a while for the pdf to download. Please be patient');
-            saveAs(blob, 'Cauchy Integral Formula.pdf');
+            saveAs(blob, 'Banzile Nhlebela CV.pdf');
         })
         .catch(error => { 
             console.error('Error downloading the PDF file:', error)
