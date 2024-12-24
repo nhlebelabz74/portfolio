@@ -11,6 +11,9 @@ const ServiceCard = ({ index, title, icon }) => {
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
         className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
       >
         <div
           options={{
@@ -37,7 +40,12 @@ const ServiceCard = ({ index, title, icon }) => {
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div 
+        variants={textVariant()}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
         <p className={`${styles.sectionSubText}`}>
           Introduction
         </p>
@@ -48,6 +56,9 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
         className='mt-4 text-secondary text-lg max-w-3xl leading-7'
       >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut veniam excepturi consectetur rem molestiae laudantium, nesciunt accusamus assumenda soluta officiis iusto est, fugiat possimus et id vitae nisi! Iure, enim!
