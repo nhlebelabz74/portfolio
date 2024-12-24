@@ -21,9 +21,12 @@ import {
     nodejs,
     mongodb,
     git,
-    carrent,
-    jobit,
-    tripguide,
+    delano,
+    kayisha,
+    nikita,
+    hexa,
+    nike,
+    dalle
 } from "../assets";
   
 export const navLinks = [
@@ -43,19 +46,19 @@ export const navLinks = [
   
   const services = [
     {
-      title: "Web Developer",
+      title: "Leadership",
       icon: web,
     },
     {
-      title: "React Native Developer",
+      title: "Critical Thinking",
       icon: mobile,
     },
     {
-      title: "Backend Developer",
+      title: "Discipline",
       icon: backend,
     },
     {
-      title: "Content Creator",
+      title: "Team Work",
       icon: creator,
     },
   ];
@@ -123,10 +126,10 @@ export const navLinks = [
       iconBg: "#0D744D",
       date: "May 2022 - Present",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Participated in intensive case workshops focused on problem-solving and consulting methodologies.",
+        "Collaborated with a diverse cohort to tackle real-world business case studies and simulations.",
+        "Demonstrated leadership potential through proactive participation and analytical reasoning.",
+        "Built a network with professionals, gaining insights into the consulting industry through BCG.",
       ],
     },
     {
@@ -136,23 +139,23 @@ export const navLinks = [
       iconBg: "#fff",
       date: "Nov 2023 - Oct 2024",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Led initiatives and represented the interests of students in the School of Computer Science and Applied Mathematics.",
+        "Coordinated with external organizations to provide workshops and resources aligned with career readiness.",
+        "Designed and implemented a streamlined communication platform for efficient updates on council activities.",
+        "Championed initiatives to modernize curriculum content by collaborating with staff and industry experts.",
       ],
     },
     {
-      title: "First Year Experience Mentor (Lead)",
+      title: "First Year Experience Co-Mentor (Lead)",
       company_name: "STPU, Wits University",
       icon: fye,
       iconBg: "#fff",
       date: "Feb 2024 - Oct 2024",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Mentored first-year students to support academic adjustment and personal development.",
+        "Facilitated workshops to help mentees navigate university life and career planning.",
+        "Monitored student academic progress and communicated insights to FYE staff in order to develop new ideas on mentoring the first years.",
+        "Worked with a co-mentor, Priyanka Gohil, to provide our mentees the best possible experience.",
       ],
     },
     {
@@ -162,10 +165,10 @@ export const navLinks = [
       iconBg: "#fff",
       date: "Feb 2024 - Present",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Assist students in understanding complex concepts, improving problem-solving skills and preparing for exams.",
+        "Received positive feedback from students and school for dedication and effectiveness.",
+        "Monitor student progress and communicate insights to academic staff.",
+        "Encourage critical thinking and problem-solving through interactive learning techniques.",
       ],
     },
     {
@@ -175,10 +178,8 @@ export const navLinks = [
       iconBg: "#051D41",
       date: "Oct 2024 - Present",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Manage a team to execute detailed planning for multiple large-scale events simultaneously.",
+        "Work closely with corporate relations to maintain relationships with sponsors and partners.",
       ],
     },
     {
@@ -188,104 +189,93 @@ export const navLinks = [
       iconBg: "#FC127C",
       date: "Feb 2025 - Jan 2026",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Learning how to use Microsoft Power Apps to perform form automation and data management.",
+        "Will collaborate with the development team to create and maintain automated processes."
       ],
     },
   ];
   
   const testimonials = [
     {
-      testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
       name: "Nikita Lella",
       designation: "CEO",
       company: "LnP Beyond Legal",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
+      image: nikita,
+      site: "https://lnpbeyondlegal.com/",
     },
     {
-      testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
       name: "Delano Martin",
       designation: "Tech Intern",
       company: "LnP Beyond Legal",
-      image: "https://randomuser.me/api/portraits/men/5.jpg",
+      image: delano,
+      site: "https://delanomartin.com"
     },
     {
-      testimonial:
-        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
       name: "Kayisha Naidoo",
       designation: "Intern",
       company: "Afretech",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
+      image: kayisha,
+      site: "https://kayishanaidoo.github.io/"
     },
   ];
   
 const projects = [
     {
-      name: "Car Rent",
-      description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      name: "Nike Clone",
+      description: "A clone of the Nike website homepage. The site is mobile responsive thanks to tailwindcss. This project was created to experiment with Tailwind CSS and React.",
       tags: [
         {
           name: "react",
           color: "blue-text-gradient",
         },
         {
-          name: "mongodb",
+          name: "tailwindcss",
           color: "green-text-gradient",
-        },
-        {
-          name: "tailwind",
-          color: "pink-text-gradient",
-        },
+        }
       ],
-      image: carrent,
-      source_code_link: "https://github.com/",
+      image: nike,
+      source_code_link: "https://nhlebelabz74.github.io/nike-experiment/",
     },
     {
-        name: "Job IT",
-        description:
-            "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        name: "Dall-E Clone",
+        description: 
+          "A web application that uses OpenAI's api to allow users to generate, share and download images based on text prompts from other users.",
         tags: [
             {
                 name: "react",
                 color: "blue-text-gradient"
             },
             {
-                name: "restapi",
+                name: "mongodb",
                 color: "green-text-gradient"
             },
             {
-                name: "scss",
+                name: "cloudinary",
                 color: "pink-text-gradient"
             }
         ],
-        image: jobit,
-        source_code_link: "https://github.com/"
+        image: dalle,
+        source_code_link: "https://themadking74-dall-e-clone.netlify.app/"
     },
     {
-        name: "Trip Guide",
-        description:
-            "Hello hello hello A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        name: "Hexafund",
+        description: "This project aims to equip the organisations with a central place to advertise all their funding opportunities and manage all the applications they get for funding",
         tags: [
             {
-                name: "nextjs",
+                name: "Azure",
                 color: "blue-text-gradient"
             },
             {
-                name: "supabase",
+                name: "mongodb",
                 color: "green-text-gradient"
             },
             {
-                name: "css",
+                name: "html/css",
                 color: "pink-text-gradient"
             }
         ],
-        image: tripguide,
-        source_code_link: "https://github.com/"
+        image: hexa,
+        source_code_link: "https://hexafund.azurewebsites.net/"
     }
 ];
 

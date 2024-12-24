@@ -33,14 +33,27 @@ const ExperienceCard = ({ experience }) => {
       </div>
 
       <ul className="list-disc mt-5 ml-5 space-y-2">
-        {experience.points.map((point, index) => (
-          <li 
-            key={`${experience.title}-point-${index}`}
-            className="text-md text-white-100 pl-1 tracking-wider"
-          >
-            {point}
-          </li>
-        ))}
+        {experience.points.map((point, index) => {
+          const flag = point.includes("Priyanka Gohil");
+          const split_point = point.split(",").map(part => part.trim());
+
+          return (
+            <li
+              key={`${experience.title}-point-${index}`}
+              className="text-md text-white-100 pl-1 tracking-wider"
+            >
+              {
+                flag ? 
+                  <span>
+                    {split_point[0]} &nbsp;
+                    <a href="https://www.linkedin.com/in/priyanka-gohil-092463299/" target="_blank" rel="noopener noreferrer" className="text-light-purple hover:text-gold">
+                      {split_point[1]}
+                    </a>, {split_point[2]}
+                  </span> : point
+              }
+            </li>
+          );
+        })}
       </ul>
     </VerticalTimelineElement>
   );
@@ -59,7 +72,7 @@ const Experience = () => {
           What I have done so far
         </p>
         <h2 className={`${styles.sectionHeadText}`}>	
-          Activities and Work Experience
+          Activities and Work Experience.
         </h2>
       </motion.div>
 

@@ -27,7 +27,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
             <img 
               src={image}
               alt={name}
-              className="w-full h-full object-cover rounded-2xl"
+              className="w-full h-full object-fill rounded-2xl"
             />
 
             <a
@@ -96,7 +96,15 @@ const Works = () => {
           viewport={{ once: true }}
           className="text-secondary text-lg leading-8 mt-3 max-w-3xl"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. In aspernatur pariatur, eveniet labore sapiente dolore qui dicta architecto, ratione quos sit ex, illum animi! Error debitis sed deserunt nisi dolore.
+          These are just some of the projects I have built fairly recently. As time goes on, I will add more and display them all here. I have chosen not to provide a link to the source code however all the repos are public. Here is a link to my Github: &nbsp;
+          <a 
+            href="https://github.com/nhlebelabz74"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-light-purple hover:text-gold"
+          >
+            link
+          </a>
         </motion.p>
       </div>
 

@@ -1,13 +1,15 @@
-import crown from "./crown.svg";
-import logo from "./logo.svg";
-import backend from "./backend.png";
-import creator from "./creator.png";
-import mobile from "./mobile.png";
-import web from "./web.png";
-import github from "./github.png";
-import menu from "./menu.svg";
-import close from "./close.svg";
+// icons
+import crown from "./icons/crown.svg";
+import logo from "./icons/logo.svg";
+import backend from "./icons/backend.png";
+import creator from "./icons/creator.png";
+import mobile from "./icons/mobile.png";
+import web from "./icons/web.png";
+import github from "./icons/github.png";
+import menu from "./icons/menu.svg";
+import close from "./icons/close.svg";
 
+// tech competencies
 import css from "./tech/css.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
@@ -22,17 +24,25 @@ import cpp from "./tech/cpp.png";
 import android from "./tech/android.png";
 import power from "./tech/power.png";
 
+// company logos
 import csam from "./company/csam.png";
 import fye from "./company/fye.png";
 import wcc from "./company/wcc.png";
 import lnp from "./company/lnp.png";
 import bcg from "./company/bcg.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+// people
+import delano from "./people/delano.png";
+import nikita from "./people/nikita.jpeg";
+import kayisha from "./people/kayisha.png";
 
-import pdf from "./pdf/Cauchy Integral Formula.pdf";
+// project thumbnails
+import hexa from "./projects/hexa.png";
+import dalle from "./projects/dall-e.png";
+import nike from "./projects/nike.png";
+
+// cv
+import pdf from "./pdf/Banzile Nhlebela CV.pdf";
 
 export {
   pdf,
@@ -63,7 +73,10 @@ export {
   cpp,
   android,
   power,
-  carrent,
-  jobit,
-  tripguide
+  delano,
+  nikita,
+  kayisha,
+  hexa,
+  dalle,
+  nike
 };

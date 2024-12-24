@@ -16,7 +16,7 @@ const Hero = () => {
             Hi, I'm <span className="text-light-purple hover:text-gold">Banzile</span>
           </h1>
           <p className={`${styles.heroSubText} cursor-pointer`}>
-            I am an aspiring management <br className="sm:block hidden"/> consultant / software developer
+            I am a Wits Computer Science <br className="sm:block hidden"/> and Mathematics <span className="text-gold font-medium">Graduand</span>
           </p>
         </div>
       </div>

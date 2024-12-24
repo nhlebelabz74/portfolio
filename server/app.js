@@ -10,6 +10,8 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 3001;
 
+const { email_to_me, receiver_email } = require('./constants');
+
 app.use(cors());
 app.use(compression());
 app.use(express.json({ limit: '50mb' }));
@@ -53,21 +55,19 @@ app.post('/api/send-email', async (req, res) => {
 
   let mailOptions;
   if(type === "notis") { // email from me to me telling me someone used my portfolio (basically just a notification to me that someone sent a message)
-    const new_message = `${sender_name} (${sender_email}) sent you a message: \n${message} using your portfolio.`;
     mailOptions = {
         from: my_email,
         to: my_email,
         subject: subject,
-        text: new_message
+        html: email_to_me({ sender_name: sender_name, sender_email: sender_email, message: message })
     };
   }
   else { // email from me to user thanking them for reaching out and using the portfolio
-    const new_message = "Hi there! Thanks for reaching out and checking out my portfolio. I'll get back to you as soon as possible. \n\nBest,\nBanzile Nhlebela";
     mailOptions = {
       from: my_email,
       to: sender_email,
       subject: subject,
-      text: new_message
+      html: receiver_email
     };
   }
 

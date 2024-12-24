@@ -1,4 +1,5 @@
 import { Tilt } from 'react-tilt';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { styles, services } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
@@ -38,6 +39,13 @@ const ServiceCard = ({ index, title, icon }) => {
 };
 
 const About = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  const textStyle = {
+    transition: 'color 0.3s ease',
+    color: isHovered ? '#caa500' : 'inherit'
+  };
+
   return (
     <>
       <motion.div 
@@ -47,10 +55,10 @@ const About = () => {
         viewport={{ once: true }}
       >
         <p className={`${styles.sectionSubText}`}>
-          Introduction
+          Who I am
         </p>
         <h2 className={`${styles.sectionHeadText}`}>	
-          Overview
+          Introduction.
         </h2>
       </motion.div>
 
@@ -60,8 +68,24 @@ const About = () => {
         whileInView="show"
         viewport={{ once: true }}
         className='mt-4 text-secondary text-lg max-w-3xl leading-7'
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut veniam excepturi consectetur rem molestiae laudantium, nesciunt accusamus assumenda soluta officiis iusto est, fugiat possimus et id vitae nisi! Iure, enim!
+        My name is Banzile Nhlebela (AKA{' '}
+        <span style={textStyle}>T</span>he{' '}
+        <span style={textStyle}>M</span>ad{' '}
+        <span style={textStyle}>K</span>ing
+        <span
+          style={textStyle}
+          className={`transition-opacity duration-300 ease-in-out ${
+            isHovered ? 'inline-block' : 'hidden'
+          }`}
+        >
+          74
+        </span>). I am an Experienced tutor and mentor with strong problem-solving and critical-thinking skills. 
+        Technical expertise in many programming languages. Seeking to apply analytical and 
+        leadership abilities and learn to develop my software development skills and drive 
+        impactful projects.
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10 justify-center'>

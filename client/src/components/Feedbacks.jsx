@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { styles, testimonials } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn } from "../utils/motion";
 import { Tilt } from "react-tilt";
 
-const FeedbackCard = ({ index, testimonial, name, designation, company, image }) => {
+const FeedbackCard = ({ index, name, designation, company, image, site }) => {
   return (
     <Tilt
       options={{
@@ -23,10 +23,12 @@ const FeedbackCard = ({ index, testimonial, name, designation, company, image })
         <div className="bg-tertiary p-5 rounded-2xl w-full sm:w-[310px]">
           <p className="text-white font-black text-4xl">"</p>
 
-          <div className="mt-1">
-            <p className="text-white text-lg tracking-wider">{testimonial}</p>
-
-            <div className="flex gap-1 justify-between items-center mt-7">
+          <a
+            href={site}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="flex gap-1 justify-between items-center mt-4">
               <div className="flex flex-col flex-1">
                 <p className="text-white font-medium text-md">
                   <span className="blue-text-gradient">@</span> {name}
@@ -43,7 +45,7 @@ const FeedbackCard = ({ index, testimonial, name, designation, company, image })
                 />
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </motion.div>
     </Tilt>
@@ -56,8 +58,16 @@ const Feedbacks = () => {
       <div className="mt-12 bg-black-100 rounded-2xl">
         <div className='bg-tertiary rounded-2xl min-h-[300px] sm:px-16 px-6 sm:py-16 py-10'>
           <motion.div>
-            <p className={`${styles.sectionSubText}`}>What People Say</p>
-            <h2 className={`${styles.sectionHeadText}`}>References</h2>
+            <p 
+              className={`${styles.sectionSubText}`}
+            >
+              What People Say
+            </p>
+            <h2 
+              className={`${styles.sectionHeadText}`}
+            >
+              References.
+            </h2>
           </motion.div>
         </div>
 
