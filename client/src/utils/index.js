@@ -13,7 +13,8 @@ const api = axios.create({
 export const downloadPdf = () => {
     axios.get(pdf, { responseType: 'blob' })
         .then(response => { 
-            const blob = new Blob([response.data], { type: 'application/pdf' }); 
+            const blob = new Blob([response.data], { type: 'application/pdf' });
+            alert('It may take a while for the pdf to download. Please be patient');
             saveAs(blob, 'Cauchy Integral Formula.pdf');
         })
         .catch(error => { 
