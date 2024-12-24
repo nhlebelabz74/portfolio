@@ -20,16 +20,14 @@ const FeedbackCard = ({ index, name, designation, company, image, site }) => {
         viewport={{ once: true }}
         className='green-pink-gradient p-[1px] rounded-2xl shadow-card'
       >
-        <div className="bg-tertiary p-5 rounded-2xl w-full sm:w-[310px]">
-          <p className="text-white font-black text-4xl">"</p>
-
+        <div className="bg-tertiary p-5 rounded-2xl w-full sm:w-[310px] max-w-64 min-w-64">
           <a
             href={site}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div className="flex gap-1 justify-between items-center mt-4">
-              <div className="flex flex-col flex-1">
+            <div className="flex gap-1 justify-between items-center flex-col-reverse">
+              <div className="flex flex-col flex-1 items-center">
                 <p className="text-white font-medium text-md">
                   <span className="blue-text-gradient">@</span> {name}
                 </p>
@@ -41,7 +39,7 @@ const FeedbackCard = ({ index, name, designation, company, image, site }) => {
                 <img
                   src={image}
                   alt={name}
-                  className="w-10 h-10 object-cover rounded-full"
+                  className="w-11 h-11 object-cover rounded-full"
                 />
               </div>
             </div>

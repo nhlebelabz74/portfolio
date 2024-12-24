@@ -197,7 +197,7 @@ export const navLinks = [
   
   const testimonials = [
     {
-      name: "Nikita Lella",
+      name: "Nikita Lalla",
       designation: "CEO",
       company: "LnP Beyond Legal",
       image: nikita,
