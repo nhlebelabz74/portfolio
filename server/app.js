@@ -1,16 +1,20 @@
 const express = require('express');
 
 const nodemailer = require('nodemailer');
-const cors = require('cors');
-const compression = require('compression');
 const path = require('path');
 const axios = require('axios');
+
+const mongoose = require('mongoose');
+const cors = require('cors');
+const compression = require('compression');
 require('dotenv').config();
+
+const connectDB = require('./config/connectDB');
+const { User } = require('./models');
+const { email_to_me, receiver_email } = require('./constants');
 
 const app = express();
 const port = process.env.PORT || 3001;
-
-const { email_to_me, receiver_email } = require('./constants');
 
 app.use(cors());
 app.use(compression());
@@ -28,21 +32,35 @@ app.post('/api/send-email', async (req, res) => {
   const { sender_name, sender_email, subject, message, type } = req.body;
   const my_email = process.env.EMAIL_ADDRESS;
 
-  try {
-    const validationResponse = await axios.get('https://apilayer.net/api/check', {
-      params: {
-        access_key: process.env.MAILBOXLAYER_API_KEY,
-        email: sender_email,
-      },
-    });
+  // check database for the email. if it exists, just send the email and 
+  // avoid using the api to check if it is valid
+  const flag = !!(await User.findOne({ email: sender_email }).exec());
 
-    const { format_valid, smtp_check } = validationResponse.data;
+  if(!flag) {
+    try {
+      const validationResponse = await axios.get('https://apilayer.net/api/check', {
+        params: {
+          access_key: process.env.MAILBOXLAYER_API_KEY,
+          email: sender_email,
+        },
+      });
+  
+      const { format_valid, smtp_check } = validationResponse.data;
 
-    if (!format_valid || !smtp_check)
-      return res.status(400).send('Invalid email address provided.');
-  } catch (error) {
-    console.error('Error validating email:', error);
-    return res.status(500).send('Error validating email address.');
+      if (!format_valid || !smtp_check)
+        return res.status(400).send('Invalid email address provided.');
+
+      await User.create({
+        name: sender_name,
+        email: sender_email
+      });
+
+      res.status(201).send('Email is exists and can receive emails');
+    }
+    catch (error) {
+      console.error('Error validating email:', error);
+      return res.status(500).send('Error validating email address.');
+    }
   }
 
   const transporter = nodemailer.createTransport({
@@ -103,6 +121,14 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).send('Internal server error');
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+connectDB(true); //true if we want to connect to the online database
+
+mongoose.connection.on("connected", async () => {
+    console.log("SUCCESSFULLY CONNECTED TO DATABASE");
+    app.listen(port, () => {
+        console.log(`server listening on port: ${port}...`)
+    });
+});
+mongoose.connection.on("disconnected", () => {
+    console.log("Lost connection to database")
 });

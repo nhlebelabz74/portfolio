@@ -1,0 +1,4 @@
+--> install mongoose and mongodb
+--> add env vars. use from dall-e cluster
+--> add email check. no need for other stuff
+--> redeploy backend
