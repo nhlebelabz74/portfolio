@@ -116,8 +116,6 @@ app.get('/api/model/:modelName/:fileName', (req, res, next) => {
 });
 
 // a little black magic
-const axios = require('axios');
-
 app.get('/api/ping', (req, res) => {
   res.status(200).send({ message: 'pong' });
 });
