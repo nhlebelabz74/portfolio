@@ -115,6 +115,25 @@ app.get('/api/model/:modelName/:fileName', (req, res, next) => {
   });
 });
 
+// a little black magic
+const axios = require('axios');
+
+app.get('/api/ping', (req, res) => {
+  res.status(200).send({ message: 'pong' });
+});
+
+const pingServer = () => {
+  axios.get(process.env.BACKEND_URL)
+      .then((response) => {
+        console.log(`ping-${response.data.message}`); // should print ping-pong
+      })
+      .catch((error) => {
+        console.error("Error pinging server:", error);
+      });
+}
+
+setInterval(pingServer, 1000 * 60 * 14); // ping server every 14 minutes since render server goes to sleep after 15 minutes
+
 //error handler
 app.use((err, req, res, next) => {
   console.error(err);
