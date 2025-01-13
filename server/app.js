@@ -55,7 +55,7 @@ app.post('/api/send-email', async (req, res) => {
         email: sender_email
       });
 
-      res.status(201).send('Email is exists and can receive emails');
+      res.status(201).send('Email exists and can receive emails');
     }
     catch (error) {
       console.error('Error validating email:', error);
@@ -114,23 +114,6 @@ app.get('/api/model/:modelName/:fileName', (req, res, next) => {
       next(err); // Pass errors to the error handler
   });
 });
-
-// a little black magic
-app.get('/api/ping', (req, res) => {
-  res.status(200).send({ message: 'pong' });
-});
-
-const pingServer = () => {
-  axios.get(process.env.BACKEND_URL)
-      .then((response) => {
-        console.log(`ping-${response.data.message}`); // should print ping-pong
-      })
-      .catch((error) => {
-        console.error("Error pinging server:", error);
-      });
-}
-
-setInterval(pingServer, 1000 * 60 * 14); // ping server every 14 minutes since render server goes to sleep after 15 minutes
 
 //error handler
 app.use((err, req, res, next) => {
